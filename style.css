@@ -126,6 +126,7 @@ header {
 
 /* Estilos generales de la sección de habilidades */
 /* Estilos generales de la sección de habilidades */
+/* Estilos generales para la sección #skills */
 #skills {
     text-align: center;
     padding: 1rem 1rem;
@@ -194,6 +195,29 @@ header {
     color: #fff; /* Cambia el color del icono al blanco al pasar el ratón */
 }
 
+/* Adaptaciones para pantallas más pequeñas */
+@media (max-width: 1200px) {
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas para pantallas medianas */
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: 1fr; /* Una columna para pantallas pequeñas */
+    }
+
+    #skills h2 {
+        font-size: 1.5rem; /* Reduce el tamaño del título */
+    }
+
+    .skills-item {
+        padding: 1.5rem; /* Reduce el padding en pantallas más pequeñas */
+    }
+
+}
+
+
 
 /* Menu Icon */
 .menu-icon {
@@ -232,6 +256,7 @@ h2 {
 /* Section About Info */
 
 
+/* Estilos generales para la sección #about-info */
 #about-info {
     background-color: #fff;
     padding: 2rem;
@@ -239,6 +264,7 @@ h2 {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center; /* Centra el contenido de la sección */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
 }
 
 /* Estilos para el título */
@@ -263,11 +289,10 @@ h2 {
     border-radius: 2px; /* Redondea los bordes de la línea */
 }
 
-
 #about-info ul {
     list-style: none;
-    padding-left: 20px;
-    
+    padding-left: 0; /* Elimina el padding izquierdo */
+    margin: 0; /* Elimina el margen superior e inferior */
 }
 
 #about-info li {
@@ -277,6 +302,7 @@ h2 {
     margin-bottom: 1rem;
     color: #333;
     font-size: 1rem;
+    word-wrap: break-word; /* Asegura que el texto largo se ajuste dentro del contenedor */
 }
 
 #about-info li i {
@@ -284,6 +310,26 @@ h2 {
     color: #3498db; /* Color de iconos fucsia */
 }
 
+/* Adaptaciones para pantallas móviles */
+@media (max-width: 768px) {
+    #about-info {
+        padding: 1rem; /* Reduce el padding en pantallas más pequeñas */
+    }
+
+    #about-info h2 {
+        font-size: 1.5rem; /* Reduce el tamaño del título */
+    }
+
+    #about-info ul {
+        padding-left: 0; /* Asegura que el padding no empuje el contenido hacia afuera */
+    }
+
+    #about-info li {
+        font-size: 0.9rem; /* Ajusta el tamaño de la fuente */
+    }
+}
+
+/* Ajusta el padding y el margen para la clase section-about */
 .section-about {
     background-color: transparent;
     padding: 3rem;
@@ -291,6 +337,14 @@ h2 {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     max-width: 1000px;
     margin: 0 auto;
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+}
+
+/* Adaptaciones adicionales para pantallas pequeñas */
+@media (max-width: 768px) {
+    .section-about {
+        padding: 1.5rem; /* Reduce el padding en pantallas más pequeñas */
+    }
 }
 
 .about-container {
@@ -597,7 +651,7 @@ h2 {
 .contact-info a:hover {
     text-decoration: underline;
 }
-/* Estilos para la sección de proyectos */
+/* Estilos generales para la sección #projects */
 #projects {
     padding: 2rem 1rem;
     background-color: #f4f4f9;
@@ -693,7 +747,40 @@ h2 {
     transform: translateY(-2px);
 }
 
+/* Adaptaciones para pantallas medianas */
+@media (max-width: 1200px) {
+    .projects-gallery {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas para pantallas medianas */
+    }
+}
 
+/* Adaptaciones para pantallas pequeñas */
+@media (max-width: 768px) {
+    .projects-gallery {
+        grid-template-columns: 1fr; /* Una columna para pantallas pequeñas */
+    }
+
+    #projects h2 {
+        font-size: 1.5rem; /* Reduce el tamaño del título */
+    }
+
+    .project-item {
+        padding: 1rem; /* Reduce el padding en pantallas más pequeñas */
+    }
+
+    .project-info h3 {
+        font-size: 1.2rem; /* Reduce el tamaño de la fuente del título */
+    }
+
+    .project-info p {
+        font-size: 0.9rem; /* Reduce el tamaño de la fuente del párrafo */
+    }
+
+    .project-button {
+        padding: 0.5rem 1rem; /* Reduce el padding del botón */
+        font-size: 0.8rem; /* Reduce el tamaño de la fuente del botón */
+    }
+}
 
 
 /* Estilos para el footer */
@@ -771,7 +858,7 @@ footer {
         position: absolute;
         top: 60px;
         right: 0;
-        background: #2d2d2d;
+        background: #fff;
         width: 100%;
     }
 
@@ -804,6 +891,31 @@ footer {
     .language-switcher {
         margin-left: auto;
         margin-top: 10px;
+
+    }
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-photo {
+        margin-bottom: 1rem;
+    }
+
+    .about-photo img {
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .about-text {
+        padding-left: 0;
+    }
+
+    .about-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
 }
 
